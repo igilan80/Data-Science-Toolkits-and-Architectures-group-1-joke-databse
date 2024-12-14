@@ -1,4 +1,4 @@
-import psycopg2
+import psycopg2 # type: ignore
 
 # Database connection settings
 HOST = "localhost"
@@ -74,3 +74,5 @@ if __name__ == "__main__":
     add_joke("Why don't scientists trust atoms? Because they make up everything!")
     print("Current jokes in the database:")
     fetch_all_jokes()
+    fetch_all_jokes()
+
