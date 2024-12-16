@@ -6,7 +6,10 @@ services:
       - .:/app
     command: python app.py
 
-services:
+  app:
+    depends_on:
+      - postgres
+ 
   postgres:
     image: postgres:latest
     container_name: joke_database
@@ -28,8 +31,4 @@ services:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
     depends_on:
-      - postgres
-
-volumes:
-  postgres_data:
-
+      - postgres 
